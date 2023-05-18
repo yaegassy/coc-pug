@@ -9,6 +9,7 @@ import {
   workspace,
 } from 'coc.nvim';
 
+import * as fs from 'fs';
 import * as path from 'path';
 
 //import * as tsVersion from './tsVersion';
@@ -31,9 +32,14 @@ export async function activate(context: ExtensionContext) {
     diagnosticModel: DiagnosticModel.Pull, // not matter because pug diagnostic is very fast
   };
 
-  serverModule = context.asAbsolutePath(
-    path.join('node_modules', '@volar', 'pug-language-server', 'bin', 'pug-language-server.js')
-  );
+  const devPugServerPath = workspace.expand(getConfigDevServerPath());
+  if (devPugServerPath && fs.existsSync(devPugServerPath)) {
+    serverModule = devPugServerPath;
+  } else {
+    serverModule = context.asAbsolutePath(
+      path.join('node_modules', '@volar', 'pug-language-server', 'bin', 'pug-language-server.js')
+    );
+  }
 
   const runOptions = { execArgv: <string[]>[] };
   const debugOptions = { execArgv: ['--nolazy', '--inspect=' + 6009] };
@@ -74,3 +80,7 @@ export function deactivate(): Thenable<any> | undefined {
 //    })
 //  );
 //}
+
+function getConfigDevServerPath() {
+  return workspace.getConfiguration('pug').get<string>('dev.serverPath', '');
+}
