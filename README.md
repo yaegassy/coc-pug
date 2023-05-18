@@ -36,6 +36,7 @@ Plug 'yaegassy/coc-pug', {'do': 'yarn install --frozen-lockfile'}
 
 - `pug.enable`: Enable coc-pug extension, default: `true`
 - `pug.trace.server`: Traces the communication between coc.nvim and the language server, valid option: `["off", "messages", "verbose"]`, default: `"off"`
+- `pug.dev.serverPath`: (For develop and check) Custom path to pug server module, `~` and `$HOME`, etc. can also be used. If there is no setting, the built-in module will be used, default: `""`
 
 ## Thanks
 
