@@ -8,7 +8,9 @@
 
 **CocInstall**:
 
-> ...TODO
+```
+:CocInstall @yaegassy/coc-pug
+```
 
 **e.g. vim-plug**:
 
