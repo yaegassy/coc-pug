@@ -1,7 +1,8 @@
 import {
-  // Diagnostic,
+  Diagnostic,
+  DiagnosticSeverity,
   ExtensionContext,
-  // HandleDiagnosticsSignature,
+  HandleDiagnosticsSignature,
   LanguageClient,
   LanguageClientOptions,
   ServerOptions,
@@ -57,7 +58,7 @@ export async function activate(context: ExtensionContext) {
     documentSelector: [{ language: 'jade' }],
     initializationOptions,
     middleware: {
-      // handleDiagnostics,
+      handleDiagnostics,
     },
   };
 
@@ -70,16 +71,15 @@ export function deactivate(): Thenable<any> | undefined {
   return client?.stop();
 }
 
-// MEMO: If necessary, diagnostics can be adjusted.
-//async function handleDiagnostics(uri: string, diagnostics: Diagnostic[], next: HandleDiagnosticsSignature) {
-//  next(
-//    uri,
-//    diagnostics.map((d) => {
-//      // MEMO: If necessary, diagnostics can be adjusted.
-//      return d;
-//    })
-//  );
-//}
+async function handleDiagnostics(uri: string, diagnostics: Diagnostic[], next: HandleDiagnosticsSignature) {
+  next(
+    uri,
+    diagnostics.map((d) => {
+      d.severity = DiagnosticSeverity.Error;
+      return d;
+    })
+  );
+}
 
 function getConfigDevServerPath() {
   return workspace.getConfiguration('pug').get<string>('dev.serverPath', '');
