@@ -1,8 +1,5 @@
 import {
-  Diagnostic,
-  DiagnosticSeverity,
   ExtensionContext,
-  HandleDiagnosticsSignature,
   LanguageClient,
   LanguageClientOptions,
   ServerOptions,
@@ -57,9 +54,6 @@ export async function activate(context: ExtensionContext) {
   const clientOptions: LanguageClientOptions = {
     documentSelector: [{ language: 'jade' }],
     initializationOptions,
-    middleware: {
-      handleDiagnostics,
-    },
   };
 
   const client = new LanguageClient('pug', 'Pug', serverOptions, clientOptions);
@@ -69,16 +63,6 @@ export async function activate(context: ExtensionContext) {
 
 export function deactivate(): Thenable<any> | undefined {
   return client?.stop();
-}
-
-async function handleDiagnostics(uri: string, diagnostics: Diagnostic[], next: HandleDiagnosticsSignature) {
-  next(
-    uri,
-    diagnostics.map((d) => {
-      d.severity = DiagnosticSeverity.Error;
-      return d;
-    })
-  );
 }
 
 function getConfigDevServerPath() {
