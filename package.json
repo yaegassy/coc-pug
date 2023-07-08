@@ -81,7 +81,7 @@
     "commands": []
   },
   "dependencies": {
-    "@volar/language-server": "1.6.4",
+    "@volar/language-server": "~1.8.0",
     "@volar/pug-language-server": "1.1.1",
     "typescript": "5.0.4"
   }

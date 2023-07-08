@@ -295,6 +295,13 @@
   dependencies:
     "@volar/source-map" "1.6.4"
 
+"@volar/language-core@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@volar/language-core/-/language-core-1.8.0.tgz#11e7d85265e70e85b7342dbf531db582406ec677"
+  integrity sha512-ZHTvZPM3pEbOOuaq+ybNz5TQlHUqPQPK0G1+SonvApGq0e3qgGijjhtL5T7hsCtUEmxfix8FrAuCH14tMBOhTg==
+  dependencies:
+    "@volar/source-map" "1.8.0"
+
 "@volar/language-server@1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@volar/language-server/-/language-server-1.6.4.tgz#2c99b8304d8fa5b4b8f2a9c4e8da49e19e4cdf23"
@@ -311,6 +318,22 @@
     vscode-languageserver-textdocument "^1.0.8"
     vscode-uri "^3.0.7"
 
+"@volar/language-server@~1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@volar/language-server/-/language-server-1.8.0.tgz#6d2c3c7c85ded7dcdb41f286f68a04733f1fb11d"
+  integrity sha512-UEqVMMXyPHLY/rghIPQIj8hJf9kzlEIoeSOk+1Ha4pH5q4DnxPEbxBPlCY3hGLG+5uDKaSX4y+SDtwk+q7Vbsw==
+  dependencies:
+    "@volar/language-core" "1.8.0"
+    "@volar/language-service" "1.8.0"
+    "@volar/typescript" "1.8.0"
+    "@vscode/l10n" "^0.0.11"
+    request-light "^0.7.0"
+    typesafe-path "^0.2.2"
+    vscode-languageserver "^8.1.0"
+    vscode-languageserver-protocol "^3.17.3"
+    vscode-languageserver-textdocument "^1.0.8"
+    vscode-uri "^3.0.7"
+
 "@volar/language-service@1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@volar/language-service/-/language-service-1.6.4.tgz#ce9fd0ee7864b916de32e4b77d59051ba016f480"
@@ -321,6 +344,17 @@
     typescript-auto-import-cache "^0.2.1"
     vscode-html-languageservice "^5.0.4"
     vscode-json-languageservice "^5.2.0"
+    vscode-languageserver-protocol "^3.17.3"
+    vscode-languageserver-textdocument "^1.0.8"
+    vscode-uri "^3.0.7"
+
+"@volar/language-service@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@volar/language-service/-/language-service-1.8.0.tgz#babbef650005653ee49b5af283f54784d027e31a"
+  integrity sha512-PxtVNaWLZF0T9jyCJ3cee/+4LUuQlOLtKvp/kghK0ZCiVhlGgqhXdpKheJmNnKmEsuSZxyUqRTLcBH4t4iLF5w==
+  dependencies:
+    "@volar/language-core" "1.8.0"
+    "@volar/source-map" "1.8.0"
     vscode-languageserver-protocol "^3.17.3"
     vscode-languageserver-textdocument "^1.0.8"
     vscode-uri "^3.0.7"
@@ -342,6 +376,20 @@
   integrity sha512-pAyqHT3jKkT6xdSLLAmTRLZtC3K01qy2Afo3ToTmjQMok+a/Rw6AxiUea8TuVq4UEEkGlNZWA9FXFJSLj2/XlQ==
   dependencies:
     muggle-string "^0.3.1"
+
+"@volar/source-map@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-1.8.0.tgz#2893a7bc9a41563da803377b33fbf8407eb4c5e1"
+  integrity sha512-d35aV0yFkIrkynRSKgrN5hgbMv6ekkFvcJsJGmOZ8UEjqLStto9zq7RSvpp6/PZ7/pa4Gn1f6K1qDt0bq0oUew==
+  dependencies:
+    muggle-string "^0.3.1"
+
+"@volar/typescript@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@volar/typescript/-/typescript-1.8.0.tgz#ef231b9b54b192c1e50b9c2cf0142a975dd81651"
+  integrity sha512-T/U1XLLhXv6tNr40Awznfc6QZWizSL99t6M0DeXtIMbnvSCqjjCVRnwlsq+DK9C1RlO3k8+i0Z8iJn7O1GGtoA==
+  dependencies:
+    "@volar/language-core" "1.8.0"
 
 "@vscode/l10n@^0.0.11":
   version "0.0.11"
